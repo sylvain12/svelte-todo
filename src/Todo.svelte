@@ -49,7 +49,7 @@
   <input
     type="checkbox"
     checked="{todo.completed}"
-    on:change="{changeTodoStatus}"
+    on:click="{changeTodoStatus}"
   />
   <p class:completed="{todo.completed}">{todo.title}</p>
   <div class="btn__action">

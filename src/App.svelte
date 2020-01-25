@@ -9,7 +9,7 @@
     {
       id:0,
       title: "Make an appointment",
-      completed: false,
+      completed: true,
     },
     {
       id:1,
@@ -50,11 +50,12 @@
   }
 
   const handleTodoState = (e) => {
-    const title = e.detail.title;
+    const id = e.detail.id;
     todos = todos.map(todo => {
-      if(todo.title === title) {
+      if(todo.id === id) {
         todo.completed = !todo.completed;
       }
+      return todo
     })
   }
 </script>
