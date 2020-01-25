@@ -1,0 +1,60 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: #333;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: 'Recursive Sans Csl b030st';
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+label {
+  display: block;
+}
+
+input,
+button,
+select,
+textarea {
+  outline: none;
+}
+
+input:disabled {
+  color: #ccc;
+}
+
+input[type='range'] {
+  height: 0;
+}
+
+hr {
+  margin-bottom: 4rem;
+}
+
+section {
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 4rem;
+}
+
+.container {
+  max-width: 96rem;
+  margin: 0 auto;
+}
