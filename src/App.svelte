@@ -26,6 +26,16 @@
       title: "Go to sport",
       completed: false,
     },
+    {
+      id:4,
+      title: "Improve my svelte app",
+      completed: false,
+    },
+    {
+      id:5,
+      title: "Deploy svelte app to zeit",
+      completed: true,
+    },
   ];
 
   $: todosLength = todos.length;
