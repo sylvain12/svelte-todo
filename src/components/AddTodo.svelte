@@ -2,7 +2,7 @@
   import Button from './Button.svelte';
   import { createEventDispatcher } from 'svelte';
 
-  let addTodoTitle;
+  export let addTodoTitle;
 
   const dispatcher = createEventDispatcher();
 

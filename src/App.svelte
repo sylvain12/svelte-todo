@@ -33,9 +33,12 @@
   /* Functions */
 
   const clearTitle = () => title = '';
+
   const handleAddTodo = (e) => {
     e.preventDefault();
     const lastTodoIndex = todos.lastIndexOf(todos[todosLength - 1]);
+
+    if(title) {
     const newTodo = {
       id: lastTodoIndex + 1,
       title: title,
@@ -43,6 +46,8 @@
     }
     todos = [...todos, newTodo];
     clearTitle();
+    }
+
   }
 
   const handleRemoveTodo = (e) => {
