@@ -12,7 +12,7 @@
         color: #fff;
         border: none;
         padding: .5rem 1rem;
-        font-family: "Recursive Sans Csl b030st";
+        font-family: "Recursive Mono Csl b030st";
         cursor: pointer;
     }
 </style>

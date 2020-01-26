@@ -22,7 +22,7 @@
     flex: 1;
     margin-right: 1.5rem;
     padding: 0.5rem 1rem;
-    font-family: 'Recursive Sans Csl b030st';
+    font-family: 'Recursive Mono Csl b030st';
   }
 
   ::placeholder {

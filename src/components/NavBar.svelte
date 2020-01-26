@@ -1,6 +1,6 @@
 <nav class="nav">
   <div class="nav__brand">
-    Todos App
+  Svelte Todo App
   </div>
   <!-- <ul class="nav__items">
     <li class="nav_item"><a href="" class="nav__link"></a></li>

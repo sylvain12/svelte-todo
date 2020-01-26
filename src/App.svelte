@@ -4,6 +4,7 @@
   import AddTodo from './components/AddTodo.svelte';
   import Button from './components/Button.svelte';
   import {beforeUpdate, onMount} from 'svelte';
+  import {LS} from './utils.js';
 
   let title;
   let checkAll = false;
@@ -11,23 +12,10 @@
   $: filterShowTodo = []
   $: countActiveTodos = 0;
 
-  let todos = [
-    {
-      id:0,
-      title: "Make an appointment",
-      completed: true,
-    },
-    {
-      id:1,
-      title: "Go to Market",
-      completed: false,
-    },
-    {
-      id:2,
-      title: "Visit my brother",
-      completed: false,
-    },
-  ];
+
+  let todos = [];
+
+  const ls =  new LS('todos',todos);
 
   $: todosLength = todos.length;
   /* Functions */
@@ -45,28 +33,33 @@
       completed: false,
     }
     todos = [...todos, newTodo];
+    ls.saveToLS(newTodo);
     clearTitle();
     }
 
   }
 
   const handleRemoveTodo = (e) => {
-    const title = e.detail.title;
-    todos = todos.filter(todo => todo.title !== title);
+    const todo = e.detail;
+    todos = todos.filter(t => t.id !== todo.id);
+    ls.removeFromLS(todo)
   }
 
   const handleTodoState = (e) => {
-    const id = e.detail.id;
+    const t = e.detail;
     todos = todos.map(todo => {
-      if(todo.id === id) {
+      if(todo.id === t.id) {
         todo.completed = !todo.completed;
       }
       return todo
     })
+
+    ls.editStateFromLs(t);
   }
 
   const handleClearTodos = () => {
     todos = todos.filter(todo => !todo.completed);
+    ls.removeCompletedTodoFromLS();
   }
   /*
   const handleCheckUncheckAll = () => {
@@ -86,6 +79,13 @@
   */
 
   /* Funcions for lifecycle*/
+
+  onMount(() => {
+
+    todos = ls.getFromLS();
+    console.log(todos);
+  });
+
   beforeUpdate(() => {
     if(showedTodo == 'active') {
       filterShowTodo = todos.filter(todo => !todo.completed)
