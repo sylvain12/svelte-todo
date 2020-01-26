@@ -1,8 +1,8 @@
 <script>
-  import Todo from './Todo.svelte';
-  import NavBar from './NavBar.svelte';
-  import AddTodo from './AddTodo.svelte';
-  import Button from './Button.svelte';
+  import Todo from './components/Todo.svelte';
+  import NavBar from './components/NavBar.svelte';
+  import AddTodo from './components/AddTodo.svelte';
+  import Button from './components/Button.svelte';
   import {beforeUpdate, onMount} from 'svelte';
 
   let title;
