@@ -54,6 +54,6 @@
   <p class:completed="{todo.completed}">{todo.title}</p>
   <div class="btn__action">
     <!-- <Button>edit</Button> -->
-    <Button on:click="{removeTodo}">X</Button>
+    <Button on:click="{removeTodo}" button_o_danger>X</Button>
   </div>
 </div>

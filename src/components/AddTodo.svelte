@@ -22,11 +22,22 @@
     flex: 1;
     margin-right: 1.5rem;
     padding: 0.5rem 1rem;
-    font-family: 'Recursive Mono Csl b030st';
+    font-family: 'Roboto Mono', monospace;
   }
 
   ::placeholder {
     color: #cecece;
+  }
+
+  @media (max-width: 640px) {
+    form {
+      flex-direction: column;
+    }
+
+    input[type='text'] {
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
   }
 </style>
 
